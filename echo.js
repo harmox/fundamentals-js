@@ -5,4 +5,4 @@ function echo (word){
         console.log(word)
     }else{console.log(`Parameter is not suitable for printing` )
 }
-}echo(123)
+}echo()
