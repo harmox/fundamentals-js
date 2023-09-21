@@ -1,7 +1,18 @@
-function test(bandName,albumName,songName) {
-    let time = (bandName.length*albumName.length)*songName.length/2;
-    let rtations=Math.ceil(time/2.5)
-    console.log(`The plate was rotated ${rtations} times`)
-} test('Rammstein', 'Sehnsucht',
-
-'Engel')
+function test(n) {
+    buff=``
+for(let i=0;i<n;i++){
+    letter=String.fromCharCode(97+i);
+    for(let b=0;b<n;b++){
+        better=String.fromCharCode(97+b);
+        for(let c=0;c<n;c++){
+            cetter=String.fromCharCode(97+c);
+            
+            buff+=letter
+            buff+=better
+            buff+=cetter+`\n`
+    
+        }
+    }
+}
+console.log(buff)
+} test(2)
