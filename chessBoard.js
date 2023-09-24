@@ -6,13 +6,13 @@ function chessBoard(n) {
         row+=`  <div>\n`
         for (let j = 0; j < n; j++) {
             let color= (i+j) %2 ? `white` : `black`
-            row += `   <span class="${color}"></span\n>`
+            row += `    <span class="${color}"></span>\n`
             
         }
-        row+=`  <div>\n`
+        row+=`  </div>\n`
 
         result += row;
-     
+      
     }   
     result+=`</div>\n`
     console.log(result)
