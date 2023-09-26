@@ -1,14 +1,8 @@
-function test(char) {
-    let code = char.charCodeAt();
-    if (code >= 65 && code <= 90) {
-        console.log(`upper-case`)
-    } else {
-        console.log(`lower-case`)
-    }
+function test(a) {
 
-    // if(char===char.toLowercase()){
-    //     console.log(`lower-case`)
-    // }else{
-    //     console.log(`upper-case`)
-    // }
-} test('a', '5', '3')
+  let num = parseInt(a,2)
+console.log(num)
+
+}
+
+test(`00001001`)
