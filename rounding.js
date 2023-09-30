@@ -1,5 +1,4 @@
 function rounding(num, poin) {
-
     if (poin > 15) {
         poin = 15
     }
