@@ -1,22 +1,16 @@
-function test(arr ) {
-  let topNums=[];
-for(let i=0;i<arr.length;i++){
+function test(arr, number) {
 
-  let num =arr[i]
-
-  let isTop=true
-  for(j=i+1;j<arr.length;j++){
-    let rightNum=arr[j]
-    if(rightNum>=num){
-      isTop=false;
-      break;
+  for (let i = 0; i < arr.length; i++) {
+    let firstNum = arr[i]
+    for (let j = i + 1; j < arr.length; j++) {
+      let secondNum = arr[j]
+      let summ = firstNum + secondNum;
+      let sum = [];
+      if (summ == number) {
+        sum.push(firstNum, secondNum)
+        console.log(sum.join(` `))
+      }
     }
-  
   }
-  if(isTop){
-    topNums.push(num)
-        }
 }
-console.log(topNums.join(` `))
-}
-test([5, 15, 23, 56 ,35],10)
+test([5, 15, 23, 56, 35], 10)
