@@ -7,6 +7,7 @@ function power(n, exponent) {
     Math.pow(n, exponent)
     console.log(Math.pow(n, exponent))
 }//power(2,8)
+
 function recursivePower(n, exponent) {
     if (exponent == 0) {
         return 1;
@@ -36,5 +37,32 @@ function repeaingString(str,n){
         stri+=str
     }
     return stri;
-    console.log(stri)
-}console.log(repeaingString(`abc`, 2 ))
+}//console.log(repeaingString(`abc`, 2 ))
+function repeating(str,n){
+    let result=str.repeat(n)
+   console.log(result)
+}
+//coffee - 1.50
+//water - 1.00
+//coke - 1.40
+//snacks - 2.00
+function orders(product,n){
+    let price=0
+    switch(product){
+case `coffee` : price=1.50*n;break;     
+case `water` : price=1.00*n;break;     
+case `coke` : price=1.40*n;break;     
+case `snacks` : price=2*n;break;     
+    }
+    console.log(price.toFixed(2))
+}
+
+function calculator(num1,num2,operator){
+let obj = {
+    "multiply":(a,b)=>a*b,
+    "add":(a,b)=>a+b,
+    "divide":(a,b)=>a/b,
+    "subtract":(a,b)=>a-b,
+}
+return obj[operator](num1,num2)
+}console.log(calculator(5,5,`divide`))
