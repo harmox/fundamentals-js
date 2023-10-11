@@ -70,19 +70,80 @@ function perfectNumber(num) {
     }
 }//perfectNumber(6)
 
-function factorialDivision(num1,num2){
-let factorial1=calcFalctorial(num1)
-let factorial2=calcFalctorial(num2)
-let devided=factorial1/factorial2
-console.log(devided.toFixed(2))
+function factorialDivision(num1, num2) {
+    let factorial1 = calcFalctorial(num1)
+    let factorial2 = calcFalctorial(num2)
+    let devided = factorial1 / factorial2
+    console.log(devided.toFixed(2))
 
-    function calcFalctorial(num){
-        let factorial=1;
-        while(num>1){
-            factorial*=num
+    function calcFalctorial(num) {
+        let factorial = 1;
+        while (num > 1) {
+            factorial *= num
             num--
         }
         return factorial;
     }
-}factorialDivision(6,2)
+}// factorialDivision(6, 2)
 
+function addAndSubtract(num1, num2, num3) {
+    let sum = add(num1, num2)
+    let output = subtract(sum, num3)
+    return output;
+    function add(a, b) {
+        let sum = a + b;
+        return sum;
+    }
+    function subtract(a, b) {
+        let subtract = a - b
+        return subtract;
+    }
+
+}//console.log(addAndSubtract(2, 3, 2))
+
+function oddAndEvenNumber(num) {
+    let numTostr = num.toString()
+    let oddSum = 0
+    let evenSum = 0
+    for (let char of numTostr) {
+        let digit = Number(char)
+        if (digit % 2 == 0) {
+            evenSum += digit
+        } else { oddSum += digit }
+    }
+    console.log(`Odd sum = ${oddSum}, Even sum = ${evenSum}`)
+} //oddAndEvenNumber()
+
+function Nxn(num) {
+    for (let i = 0; i < num; i++) {
+        let me = `${num} `.repeat(num)
+        console.log(me)
+    }
+}//Nxn(3)
+
+function singCheck(char1, char2) {
+    let buf = ``
+    let a = char1.charCodeAt()
+    let b = char2.charCodeAt()
+    if(a>b){
+        for (let i = b + 1; i < a; i++) {
+            buf += String.fromCharCode(i) + ` `}
+    }
+    for (let i = a + 1; i < b; i++) {
+        buf += String.fromCharCode(i) + ` `
+    }
+    console.log(buf)
+} //singCheck('C','#')
+
+function loadingBar(num){
+let rep=num/10
+let ar=``
+ar+=`%`.repeat(rep)
+ar+=`.`.repeat(10-rep)
+
+console.log(num+`%`+` [${ar}]`)
+console.log(`Still loading`)
+
+
+
+}loadingBar(30)
