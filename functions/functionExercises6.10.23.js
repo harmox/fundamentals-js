@@ -125,9 +125,10 @@ function singCheck(char1, char2) {
     let buf = ``
     let a = char1.charCodeAt()
     let b = char2.charCodeAt()
-    if(a>b){
+    if (a > b) {
         for (let i = b + 1; i < a; i++) {
-            buf += String.fromCharCode(i) + ` `}
+            buf += String.fromCharCode(i) + ` `
+        }
     }
     for (let i = a + 1; i < b; i++) {
         buf += String.fromCharCode(i) + ` `
@@ -135,15 +136,18 @@ function singCheck(char1, char2) {
     console.log(buf)
 } //singCheck('C','#')
 
-function loadingBar(num){
-let rep=num/10
-let ar=``
-ar+=`%`.repeat(rep)
-ar+=`.`.repeat(10-rep)
+function loadingBar(num) {
+    let rep = num / 10
+    let ar = ``
+    ar += `%`.repeat(rep)
+    ar += `.`.repeat(10 - rep)
+    if (num == 100) {
+        console.log(`100% Complete`)
+        console.log(`[%%%%%%%%%%]`)
+    } else {
+        console.log(num + `%` + ` [${ar}]`)
+        console.log(`Still loading...`)
+    }
 
-console.log(num+`%`+` [${ar}]`)
-console.log(`Still loading`)
 
-
-
-}loadingBar(30)
+} loadingBar(30)
