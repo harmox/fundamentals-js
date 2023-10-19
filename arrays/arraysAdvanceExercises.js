@@ -27,7 +27,7 @@ function distingArray(arr) {
             unique.push(el)
         }
     } console.log(unique.join(` `))
-} distingArray([1, 2, 3, 4])
+} //distingArray([1, 2, 3, 4])
 
 function hauseParty(arr) {
     let guests = []
@@ -51,7 +51,7 @@ function hauseParty(arr) {
             }
         }
     } console.log(guests.join(`\n`))
-} hauseParty([])
+} //hauseParty([])
 
 function sorting(num) {
     let sortedNum = num.sort((a, b) => a - b)
@@ -62,7 +62,7 @@ function sorting(num) {
         let minNum = sortedNum.shift()
         finalNums.push(maxNum, minNum)
     } console.log(finalNums.join(` `))
-} sorting()
+} //sorting()
 
 function sortedBy2Criteria(arr) {
     let sortedArr = arr.sort((a, b) => a.length - b.length || a.localeCompare(b))
@@ -73,7 +73,7 @@ function bombNumer(nums, bombInfo) {
     let [bombNum, power] = bombInfo
     while (nums.includes(bombNum)) {
         let idx = nums.indexOf(bombNum)
-        nums.splice(Math.max(0,idx - power), power * 2 + 1, 0)
+        nums.splice(Math.max(0, idx - power), power * 2 + 1, 0)
     }
     let sum = 0;
     for (let el of nums) {
@@ -81,3 +81,15 @@ function bombNumer(nums, bombInfo) {
     }
     console.log(sum)
 }
+
+function searchOfNumber(arr1, arr2) {
+    let counter = 0
+    let newArr = []
+    newArr = arr1.slice(0, arr2[0])
+    newArr.splice(0, arr2[1])
+    for (let el of newArr) {
+        if (el == arr2[2]) { counter++ }
+    }
+    console.log(`Number ${arr2[2]} occurs ${counter} times.`)
+}//searchOfNumber([5, 2, 3, 4, 1, 6],
+// [5, 2, 3])
