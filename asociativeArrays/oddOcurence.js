@@ -19,4 +19,4 @@ function oddOccurrences(input) {
     }
     console.log(result.join(' '));
 }
-oddOcurence('Java C# Php PHP Java PhP 3 C# 3 1 5 C#')
+oddOccurrences('Java C# Php PHP Java PhP 3 C# 3 1 5 C#')

@@ -1,9 +1,10 @@
 function test(){
-    let myAcc={
-        balance:1500,
-        holeder:`John`
-    }
-    let other=myAcc
-    other.balance-=300
-    console.log(myAcc.balance)
+    let str1 = "GeeksforGeeks"; 
+    let str2 = "Geeks123"; 
+    
+    let regex = /^[a-zA-Z]+$/; 
+    
+    console.log(regex.test(str1)); 
+    console.log(regex.test(str2));
+    
 }test()
