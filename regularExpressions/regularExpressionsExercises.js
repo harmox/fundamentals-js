@@ -65,25 +65,35 @@ function softuniBarIncome(input) {
 } //softuniBarIncome()
 
 function winningTicket(input) {
-    let tickets = input.trim().split(', ')
-    for (let char of tickets) {
-        let match = char.match(/[@#$\^]+/)
-        
-        if(char.length==20){
-            if(match){
-                if(match[0].length>=10){
-                    console.log(`ticket "${char}" - ${match[0].length/2}${match[0][1]} Jackpot!`)
-                }else if (match[0].length>=6){
-                    console.log(`ticket "${char}" - ${match[0].length}${match[0][1]}`)
-            }
-        
-            }else{
-                console.log(`ticket "${char}" - no match`)
-            }
-        }else{
-            console.log("invalid ticket")
+    const tickets = input.split(/,\s*/).map(t => t.trim());
+    const output = [];
+
+    tickets.forEach(ticket => {
+        if (ticket.length !== 20) {
+            output.push(`invalid ticket`);
+            return;
         }
-        
-    }
-}// winningTicket(`$$$$$$$$$$$$$$$$$$$$, aabb , th@@@@@@eemo@@@@@@ey`)
+
+        const leftHalf = ticket.substring(0, 10);
+        const rightHalf = ticket.substring(10);
+        const regex = /(@{6,10}|#{6,10}|\${6,10}|\^{6,10})/;
+        const leftMatch = leftHalf.match(regex);
+        const rightMatch = rightHalf.match(regex);
+
+        if (leftMatch && rightMatch && leftMatch[0][0] === rightMatch[0][0]) {
+            const minLength = Math.min(leftMatch[0].length, rightMatch[0].length);
+            const symbol = leftMatch[0][0];
+
+            if (minLength === 10) {
+                output.push(`ticket "${ticket}" - 10${symbol} Jackpot!`);
+            } else {
+                output.push(`ticket "${ticket}" - ${minLength}${symbol}`);
+            }
+        } else {
+            output.push(`ticket "${ticket}" - no match`);
+        }
+    });
+
+    return output.join('\n');
+}//winningTicket(`$$$$$$$$$$$$$$$$$$$$, aabb , th@@@@@@eemo@@@@@@ey`)
 
