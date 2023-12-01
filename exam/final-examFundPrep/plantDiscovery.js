@@ -14,7 +14,7 @@ function plantDiscovery(arr) {
             if (action == `Rate`) {
                 rating = Number(rating)
 
-                if (plants[plant].count != undefined) {
+                if (plants[plant].rating != null) {
                     plants[plant].count += 1
                     plants[plant].rating += rating
                 } else {
@@ -25,7 +25,7 @@ function plantDiscovery(arr) {
                 plants[plant].rarity = rating
 
             } else if (action == `Reset`) {
-                plants[plant].rating = 0
+                plants[plant].rating = null
             }
         } else {
             console.log(`error`)
@@ -35,11 +35,11 @@ function plantDiscovery(arr) {
 
     console.log(`Plants for the exhibition:`)
     for (let plant in plants) {
-        if (plants[plant].rating != undefined && plants[plant].rating != 0 &&plants[plant].rating!=null) {
+        if (plants[plant].rating != undefined && plants[plant].rating != 0 ) {
             let averageRating = (plants[plant].rating / plants[plant].count).toFixed(2)
             console.log(`- ${plant}; Rarity: ${plants[plant].rarity}; Rating: ${averageRating}`)
         } else {
-          //  plants[plant].rating = 0
+           plants[plant].rating = 0
             console.log(`- ${plant}; Rarity: ${plants[plant].rarity}; Rating: ${(plants[plant].rating).toFixed(2)}`)
         }
     }
