@@ -1,10 +1,15 @@
-function test(){
-    let str1 = "GeeksforGeeks"; 
-    let str2 = "Geeks123"; 
+function test(n,x){
+    let a = n+dec(x)
+
+    console.log(a)
+}
+test(1,3)
+function dec(num){
     
-    let regex = /^[a-zA-Z]+$/; 
-    
-    console.log(regex.test(str1)); 
-    console.log(regex.test(str2));
-    
-}test()
+    let sum=0
+    for(let i=num;i>0;i--){
+        sum+=i
+    }
+    console.log(sum)
+    return sum;
+}
